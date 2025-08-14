@@ -1,12 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Akshay Saini</title>
+    <title>Throttle Example</title>
   </head>
-  <body>
-    <input type="text" onkeyup="betterFunction()" />
-    <script src="./Deb_throttling.js"></script>
+  <body style="height: 2000px">
+    <h2>Scroll down to see Throttle in action</h2>
+
+    <script>
+      // Throttle function
+      const throttle = (fn, limit) => {
+        let flag = true;
+        return function () {
+          let context = this;
+          let args = arguments;
+          if (flag) {
+            fn.apply(context, args);
+            flag = false;
+            setTimeout(() => {
+              flag = true;
+            }, limit);
+          }
+        };
+      };
+
+      // Function to run on scroll
+      function logScroll() {
+        console.log("Scroll event fired at:", new Date().toLocaleTimeString());
+      }
+
+      // Attach throttled version to scroll event
+      window.addEventListener("scroll", throttle(logScroll, 1000));
+    </script>
   </body>
 </html>
