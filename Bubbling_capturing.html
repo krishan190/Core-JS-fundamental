@@ -20,9 +20,27 @@
       </div>
     </div>
     <script>
-      document.querySelector("#grandparent").addEventListener("click", () => {
-        console.log("GrandParent clicked");
-      });
+      document.querySelector("#grandparent").addEventListener(
+        "click",
+        () => {
+          console.log("GrandParent clicked");
+        },
+        true
+      ); //capturing
+      document.querySelector("#parent").addEventListener(
+        "click",
+        () => {
+          console.log("Parent clicked");
+        },
+        false
+      ); //bubbling  By default is false i.e it is bubbling
+      document.querySelector("#child").addEventListener(
+        "click",
+        () => {
+          console.log("child clicked");
+        },
+        true
+      ); //capturing
     </script>
   </body>
 </html>
