@@ -1,3 +1,4 @@
+// Polyfill are a basically own implementation of an inbuilt funciton in Javascript?
 // polyfill is a short of browser fallback support your browser doesn't have bind function
 // you have to do written your bind function
 
