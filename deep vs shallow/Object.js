@@ -24,10 +24,13 @@ const person = {
 
 const shallowCopy = Object.assign({}, person);
 
+shallowCopy.name = "Namdev";
 shallowCopy.address.city = "Mumbai";
 
-console.log(person.address.city);
-console.log(shallowCopy.address.city);
+console.log(person.name);
+console.log(shallowCopy.name)
+console.log(person.address.city);//Mumbai
+console.log(shallowCopy.address.city)//Mumbai
 
 //Deep copy using JSON.parse() and JSON.stringify()
 
@@ -37,7 +40,11 @@ console.log(shallowCopy.address.city);
 
 const deepCopy = JSON.parse(JSON.stringify(person));
 
+deepCopy.name = "Hello";
 deepCopy.address.city = "Rewa";
 
-console.log(person.address.city);
-console.log(deepCopy.address.city);
+
+console.log(person.name);//Delhi
+console.log(deepCopy.name);//Hello
+console.log(person.address.city);//Delhi
+console.log(deepCopy.address.city);//Rewa
