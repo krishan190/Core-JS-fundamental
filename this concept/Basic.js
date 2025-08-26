@@ -11,6 +11,8 @@ console.log(this); //global object [i.e window object in the browser]
 function x() {
     // the value depends on strict / non-strict mode
     console.log(this);
+    // in strict mode :undefined
+    // in non strict mode: window object
 }
 
 x();
@@ -24,7 +26,7 @@ x();
 // 4=> this keyword value depends on how the function is called (window)
 
 x(); //when you call it without refernece of any object then it becomes undefined
-window.x();
+window.x(); //window
 
 
 // this inside a object's method
@@ -40,12 +42,12 @@ const student1 = {
 }
 // here this will point to the student obj.
 
-// x is a method of object obj.
+// printName is a method of object obj.
 
-student1.printName();
+student1.printName();//krishan
 
 
-// now if you want to share the this above x function [student] with this below object we can use call, apply, bind
+// now if you want to share the this above printName function [student] with this below object we can use call, apply, bind
 const student2 = {
     name: "Deepika"
 }
@@ -59,7 +61,7 @@ student1.printName.call(student2)//value of this = student2
 
 //call , apply and bind methods (sharing methods)
 
-// this inside arrow function[arrow function does not have their own this]
+//⭐⭐⭐ this inside arrow function[arrow function does not have their own this]
 
 const obj = {
     a: 10,
