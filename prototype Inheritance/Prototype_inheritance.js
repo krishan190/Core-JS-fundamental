@@ -19,24 +19,24 @@
 // proto that will point to the p1 object so it will print piyush 
 
 
-const p1={
-    fname:"Akshay",
-    lname:"Saini",
-    getFullName(){
+const p1 = {
+    fname: "Akshay",
+    lname: "Saini",
+    getFullName() {
         return `${this.fname} ${this.lname}`;
     }
 }
 
 // const p2 = Object.create(p1);
 // above code is same as this below code
-const p2={
-    __proto__:p1
+const p2 = {
+    __proto__: p1
 }
 
-console.log("p1 is",p1.fname);
-p2.__proto__.fname="Hack";
+console.log("p1 is", p1.fname);
+p2.__proto__.fname = "Hack";
 
-console.log("p1 after this",p1.fname);
+console.log("p1 after this", p1.fname);
 
 
 
@@ -66,5 +66,5 @@ object2.__proto__ = object;
 // In browser
 // object2.name //"aditya"
 // object2.city // "Mumbai"
-      
+
 

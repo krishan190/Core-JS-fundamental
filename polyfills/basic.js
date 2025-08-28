@@ -21,14 +21,14 @@ Function.prototype.myCall = function (context, ...args) {
     context = context || globalThis;
     // console.log("context",context);
     const sym = Symbol();
-    console.log("sym", sym);
-    console.log("this value", this);
+    // console.log("sym", sym); //Symbol()
+    console.log("this value", this);//[Function: greet]
 
     context[sym] = this;
-    console.log("context[sym] value", context[sym]);
+    // console.log("context[sym] value", context[sym]);//[Function: greet]
 
     const result = context[sym](...args);
-    console.log("result will be", result);
+    // console.log("result will be", result);
 
     delete context[sym];
     return result;
@@ -40,7 +40,9 @@ function greet(age, city) {
 
 const person = { name: "Krishna" };
 
-greet.myCall(person, 25, "Pune");
+const returnObj=greet.myCall(person, 25, "Pune");
+// console.log("returnObj value",returnObj);//undefined
+
 
 
 
