@@ -45,8 +45,14 @@ displaySquare(square);
 
 // 5=> Function scope
 
-for (let i = 0; i < 5; i++) {
+for (var i = 0; i < 5; i++) {
     setTimeout(() => {
         console.log(i);
     }, i * 1000);
 }
+
+// Reason==>(In case of var) here concept is applicable that scope with var and js execution flow
+
+// The loop finishes, and i becomes 5. Since var has a function scope (or global scope in this case), 
+// there is only one variable i that is shared across all iterations. The loop completes its execution 
+// very quickly, and by the time it's done, the value of i has been incremented to its final value of 5.
