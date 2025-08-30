@@ -50,3 +50,8 @@ console.log(multiply(3, 4)); // 12
 const divide = (a, b) => a / b;
 
 console.log(divide(10, 2)); // 5
+
+
+// arrow vs normal function
+
+1
