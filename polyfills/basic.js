@@ -12,23 +12,25 @@
 // const fn = greet.bind(user, "Namaste");
 // fn("!!!");
 
+// ✅ Summary:
+
+// Symbol() → ensures a hidden unique property so we don’t overwrite existing ones.
+
+// result is undefined → because the original function didn’t return anything.
+
+// Without Symbol() → still works, but risks clashing with user-defined properties.
+
 Function.prototype.myCall = function (context, ...args) {
-    // console.log("context",context);
-    // console.log("args value",...args);
 
-    // console.log("globalthis", globalThis);
-
-    context = context || globalThis;
-    // console.log("context",context);
+    context = context || globalThis; //this is optional to write this line
+    console.log("context", context);
     const sym = Symbol();
-    // console.log("sym", sym); //Symbol()
-    console.log("this value", this);//[Function: greet]
 
     context[sym] = this;
-    // console.log("context[sym] value", context[sym]);//[Function: greet]
+    console.log("context[sym] value", context[sym]);//[Function: greet]
 
     const result = context[sym](...args);
-    // console.log("result will be", result);
+    console.log("result will be", result);
 
     delete context[sym];
     return result;
@@ -40,7 +42,7 @@ function greet(age, city) {
 
 const person = { name: "Krishna" };
 
-const returnObj=greet.myCall(person, 25, "Pune");
+const returnObj = greet.myCall(person, 25, "Pune");
 // console.log("returnObj value",returnObj);//undefined
 
 
