@@ -29,8 +29,8 @@ Function.prototype.myCall = function (context, ...args) {
     context[sym] = this;
     console.log("context[sym] value", context[sym]);//[Function: greet]
 
-    const result = context[sym](...args);
-    console.log("result will be", result);
+    const result = context[sym](...(args || []));
+    // console.log("result will be", result);
 
     delete context[sym];
     return result;
@@ -44,6 +44,11 @@ const person = { name: "Krishna" };
 
 const returnObj = greet.myCall(person, 25, "Pune");
 // console.log("returnObj value",returnObj);//undefined
+
+
+// ✅ So why return result?
+// To make myCall behave exactly like the native .call.
+// Without it, you lose the ability to use the return value of the function.
 
 
 
