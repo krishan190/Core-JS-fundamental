@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas vs. SVG</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .graphic-container {
+            border: 2px solid #ccc;
+            padding: 1rem;
+            border-radius: 8px;
+        }
+
+        h2 {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="graphic-container">
+        <h2>Canvas (Pixel-based)</h2>
+        <canvas id="myCanvas" width="300" height="200"></canvas>
+    </div>
+
+    <div class="graphic-container">
+        <h2>SVG (Vector-based)</h2>
+        <svg width="300" height="200">
+            <!-- A green rectangle -->
+            <rect x="20" y="20" width="100" height="100" fill="green" />
+            <!-- A yellow circle with a purple stroke -->
+            <circle cx="200" cy="100" r="80" stroke="purple" stroke-width="5" fill="yellow" />
+            <!-- Text that is part of the graphic -->
+            <text x="75" y="180" font-family="Arial" font-size="20" fill="gray">Hello SVG!</text>
+        </svg>
+    </div>
+
+    <script>
+        // Get the canvas element and its 2D context
+        const canvas = document.getElementById('myCanvas');
+        const ctx = canvas.getContext('2d');
+
+        // Draw a blue rectangle on the canvas
+        ctx.fillStyle = 'blue';
+        ctx.fillRect(20, 20, 100, 100);
+
+        // Draw a red circle on the canvas
+        ctx.beginPath();
+        ctx.arc(200, 100, 80, 0, 2 * Math.PI);
+        ctx.fillStyle = 'red';
+        ctx.fill();
+
+        // Add text to the canvas
+        ctx.font = '20px Arial';
+        ctx.fillStyle = 'white';
+        ctx.fillText('Hello Canvas!', 55, 125);
+    </script>
+
+</body>
+
+</html>
