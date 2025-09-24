@@ -56,5 +56,5 @@ Array.prototype.myReduce = function (callback, initialValue) {
 
 const arr2 = [1, 2, 3];
 
-const product = arr2.myReduce((acc, num) => acc + num, 0)
+const product = arr2.myReduce((acc, num) => acc * num, 1)
 console.log("product value", product);
