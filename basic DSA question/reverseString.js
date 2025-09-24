@@ -28,10 +28,4 @@ function isPalindrome(str) {
 console.log(isPalindrome("madam"));
 
 
-// 3
 
-
-let str1="programming";
-
-let newStr1=[...new Set(str1)].join(""); //it gives unique element of array
-console.log(newStr1);
