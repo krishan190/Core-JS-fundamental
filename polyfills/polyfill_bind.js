@@ -1,15 +1,18 @@
+// In JavaScript, call, apply, and bind are methods of the Function.prototype object, 
+// used to control the this context within a function and pass arguments.
+
 // Polyfill are a basically own implementation of an inbuilt funciton in Javascript?
 // polyfill is a short of browser fallback support your browser doesn't have bind function
 // you have to do written your bind function
 
 let name = {
-  firtname: "Krishan",
+  firstname: "Krishan",
   lastname: "Namdev",
 };
 
 let printName = function (hometown, state) {
   console.log(
-    this.firtname + " " + this.lastname + ", " + hometown + " " + state
+    this.firstname + " " + this.lastname + ", " + hometown + " " + state
   );
 };
 
