@@ -23,3 +23,26 @@ console.log(map.get(true));
 // Map allows any type of key (string, number, object, function, etc.).
 // Maintains insertion order.
 // Has methods: .set(), .get(), .has(), .delete(), .clear().
+
+// Map vs object
+
+let obj = { name: "Krishna", age: 25 };
+console.log(obj["name"]); // Krishna
+
+
+// 2 example
+
+let map1 = new Map();
+
+map1.set("name", "krishan");
+map1.set({ role: "dev" }, "object as key");
+
+console.log(map1.get("name"));
+console.log(map1.get([...map1.keys()]));
+
+// ⚡ Interview Answer (Short & Smart)
+
+// 👉 “In JavaScript, both Object and Map can act like hashmaps. But Map is more powerful since it allows any
+// data type as key, maintains insertion order, and has better performance for frequent insert/delete operations.
+//  Objects are fine for simple static key-value pairs with string keys.”
+
