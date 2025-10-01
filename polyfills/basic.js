@@ -27,11 +27,9 @@ Function.prototype.myCall = function (context, ...args) {
     const sym = Symbol();
 
     context[sym] = this;
-    console.log("context[sym] value", context[sym]);//[Function: greet]
+    // console.log("context[sym] value", context[sym]);//[Function: greet]
 
     const result = context[sym](...(args || []));
-    // console.log("result will be", result);
-
     delete context[sym];
     return result;
 };

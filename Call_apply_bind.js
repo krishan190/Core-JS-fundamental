@@ -56,3 +56,9 @@ function greet(city, country) {
 }
 const boundGreet = greet.bind(person, "Paris");
 boundGreet("France"); // Output: Hello, my name is Charlie and I live in Paris, France.
+
+// Key Differences
+
+// Execution: call() and apply() execute the function immediately, while bind() returns a new function that can be executed later.
+// Argument Passing: call() takes arguments individually, apply() takes an array of arguments, and bind() takes individual arguments for pre-filling and can also accept additional arguments when the bound function is finally called.
+// Return Value: call() and apply() return the result of the function execution, while bind() returns a new function. 
