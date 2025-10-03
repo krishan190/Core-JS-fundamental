@@ -1,0 +1,8 @@
+@import 'mixins';  // import the mixins
+
+.box {
+  @include flex-center;
+  width: 100px;
+  height: 100px;
+  background: lightblue;
+}
