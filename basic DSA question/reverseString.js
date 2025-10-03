@@ -8,6 +8,23 @@ const joinStr = revStr.join("");
 // console.log(str);
 console.log(joinStr);
 
+// without built in function
+
+let mytext = "i'm a lasagna   hog";
+
+// Step 1: remove extra spaces
+let words = mytext.split(" ").filter(Boolean);
+let cleaned = words.join(" ");
+
+// Step 2: reverse manually
+let reversed = "";
+for (let i = cleaned.length - 1; i >= 0; i--) {
+    reversed += cleaned[i];
+}
+
+console.log(reversed);
+
+
 
 // 2 pointer Approach
 

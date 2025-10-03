@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>selectors in css</title>
+</head>
+
+<body>
+    <h5>What are the differences between child, descendant, and sibling selectors in CSS? Provide examples for each.
+    </h5>
+
+    <!-- child selector -->
+
+    <!-- Selects direct children of an element (one level down only).
+    Does NOT apply to deeper nested elements. -->
+
+    <div class="parent">
+        <p>Direct child</p>
+        <div>
+            <p>Nested descendant</p>
+        </div>
+    </div>
+
+
+    <style>
+        .parent>p {
+            color: red;
+            /* only "Direct child" turns red */
+        }
+    </style>
+
+    <!-- ✅ Only the immediate child <p> inside .parent is selected. -->
+
+
+    <!-- descendant selector (space ) -->
+
+    <!-- Selects all elements inside, at any depth.
+         More general than child selector. -->
+
+    <style>
+        .parent p {
+            color: blue;
+            /* both <p> elements turn blue */
+        }
+    </style>
+
+    <!-- ✅ Both the direct <p> and the nested <p> are styled. -->
+
+</body>
+
+</html>
