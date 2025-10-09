@@ -22,7 +22,7 @@ for (let i = cleaned.length - 1; i >= 0; i--) {
     reversed += cleaned[i];
 }
 
-console.log(reversed);
+console.log(reversed);//goh angasal a m'i
 
 
 
