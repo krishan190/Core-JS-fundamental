@@ -20,3 +20,9 @@
 // 🌟 As a beginner, just remember:
 // 🔸Rest is like a vacuum cleaner 🌀 → collects things.
 // 🔸Spread is like a hand fan 🌬️ → spreads them out.
+
+
+
+// spread operator
+
+
