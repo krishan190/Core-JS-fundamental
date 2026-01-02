@@ -10,7 +10,7 @@ const getData = () => {
   console.log("Fetching data....", counter++);
 };
 
-const debounce = function (fn, d) {
+const debounce = function (fn, delay) {
   let timer;
   return function () {
     let context = this;
@@ -22,7 +22,7 @@ const debounce = function (fn, d) {
     clearTimeout(timer);
     timer = setTimeout(() => {
       fn.apply(context, args);
-    }, d);
+    }, delay);
   };
 };
 

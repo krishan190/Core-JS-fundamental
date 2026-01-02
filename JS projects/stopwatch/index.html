@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Stopwatch</title>
+    <style>
+        body {
+            background-color: aquamarine;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        #display {
+            font-size: 50px;
+            margin: 20px 0;
+            letter-spacing: 4px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        h1 {
+            font-size: 50px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Stopwatch</h1>
+        <div id="display">00:00:00</div>
+
+        <div class="buttons">
+            <button id="start">Start</button>
+            <button id="stop">Stop</button>
+            <button id="reset">Reset</button>
+        </div>
+    </div>
+
+    <script>
+        let startTime;
+        let elapsedTime = 0;
+        let intervalId;
+
+        const display = document.getElementById("display");
+        const startBtn = document.getElementById("start");
+        const stopBtn = document.getElementById("stop");
+        const resetBtn = document.getElementById("reset");
+
+        // Format time into HH:MM:SS
+        function formatTime(ms) {
+            let seconds = Math.floor(ms / 1000);
+            console.log("seconds", seconds);
+
+            let hours = Math.floor(seconds / 3600);
+            console.log("hours", hours);
+            seconds %= 3600;
+
+            let minutes = Math.floor(seconds / 60);
+            console.log("minutes", minutes);
+
+            seconds %= 60;
+
+            return (
+                String(hours).padStart(2, "0") + ":" +
+                String(minutes).padStart(2, "0") + ":" +
+                String(seconds).padStart(2, "0")
+            );
+        }
+
+        // Start
+        startBtn.addEventListener("click", () => {
+            if (!intervalId) {
+                startTime = Date.now() - elapsedTime;
+                console.log("starttime", startTime);
+
+                intervalId = setInterval(() => {
+                    elapsedTime = Date.now() - startTime;
+                    console.log("elapsedTime", elapsedTime);
+
+                    display.textContent = formatTime(elapsedTime);
+                }, 100);
+            }
+        });
+
+        // Stop
+        stopBtn.addEventListener("click", () => {
+            clearInterval(intervalId);
+            intervalId = null;
+        });
+
+        // Reset
+        resetBtn.addEventListener("click", () => {
+            clearInterval(intervalId);
+            intervalId = null;
+            elapsedTime = 0;
+            display.textContent = "00:00:00";
+        });
+
+    </script>
+</body>
+
+</html>
