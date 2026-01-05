@@ -24,3 +24,5 @@ function testLet() {
   // console.log(y); ❌ ReferenceError (outside block)
 }
 testLet();
+
+
