@@ -7,8 +7,21 @@ const obj = {
     });
   },
 };
-obj.log();
+// obj.log();
 
 //It prints undefined1
 //          undefined2
 //          undefined3
+
+
+var foo = 1;
+(function () {
+  console.log(foo);
+  foo = 2;
+  console.log(window.foo);
+  console.log(foo);
+  var foo = 3;
+  
+  console.log(foo);
+  console.log(window.foo)
+})()

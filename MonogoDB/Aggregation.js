@@ -204,3 +204,20 @@ db.cars.aggregate([
         }
     }
 ])
+
+//Aggregate with String Operators
+// Aggregate to check if the fuel type contains the substring "Dies" for cars made by "Hyundai"
+
+db.cars.aggregate([
+    {
+        $project: {
+            _id: 0,
+            model: 1,
+            is_diesel: {
+                $regexMatch: {
+                    input: "$fuel_type",
+                    regex: "Dies"
+                }
+            }
+        }
+    }])
