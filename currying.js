@@ -17,6 +17,18 @@ function sum(a) {
 
 console.log(sum(1)(2)(3)) // 6
 
+
+// *******************************************************************
+
+const curriedMultiply = x => y => x * y;
+
+console.log(curriedMultiply(5)(6)); // 30
+
+// partially applied functions are a common use case of currying.
+const TimesFive = curriedMultiply(5);
+
+console.log(TimesFive(10)); // 50
+
 // 1 way => bind method
 
 let multiply = function (x, y) {

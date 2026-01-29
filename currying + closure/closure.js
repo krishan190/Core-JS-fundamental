@@ -30,4 +30,16 @@ console.log(fn());
 
 // Each time you call fn(), it still has access to the same counter — it doesn’t reset.
 
+function sum(initial) {
+    console.log("initial", initial)
+    let total = initial;
 
+    return function next(value) {
+        if (value === undefined) {
+            return total;
+        }
+        total += value;
+        return next;
+    };
+}
+sum(1)(2)(5)();
