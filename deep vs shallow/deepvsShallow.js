@@ -5,7 +5,10 @@
 
 // So the outer array is new, but its inner elements (objects or arrays) still point to the same memory.
 
-const arr1 = [[1, 2], [3, 4]];
+const arr1 = [
+  [1, 2],
+  [3, 4],
+];
 const arr2 = [...arr1];
 
 // So:
@@ -13,13 +16,15 @@ const arr2 = [...arr1];
 // arr1 and arr2 are different arrays (different outer references ✅)
 // But their elements point to the same nested arrays (shared references ❌)
 
-
 // ⚙️ Let’s prove this with code:
 
-const arr3 = [[1, 2], [3, 4]];
+const arr3 = [
+  [1, 2],
+  [3, 4],
+];
 const arr4 = [...arr3]; // shallow clone
 
-arr4[0][0] = 99; // change nested array inside arr4 
+arr4[0][0] = 99; // change nested array inside arr4
 
 console.log(arr4); // [[99, 2], [3, 4]]
 console.log(arr3); // [[99, 2], [3, 4]] ❌ changed too
@@ -34,7 +39,10 @@ console.log(arr3); // [[99, 2], [3, 4]] ❌ changed too
 
 // if you want a deep clone you can use JSON methods
 
-const arr5 = [[1, 2], [3, 4]];
+const arr5 = [
+  [1, 2],
+  [3, 4],
+];
 const arr6 = JSON.parse(JSON.stringify(arr5)); // deep clone
 
 arr6[0][0] = 99; // change nested array inside arr6
