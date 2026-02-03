@@ -4,7 +4,7 @@
 
 function firstRepatedChar(str) {
   for (let i = 0; i < str.length; i++) {
-    for (let j = 0; j < str.length; j++) {
+    for (let j = i + 1; j < str.length; j++) {
       if (str[i] === str[j]) {
         return str[i];
       }
