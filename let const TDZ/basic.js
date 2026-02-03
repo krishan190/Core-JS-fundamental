@@ -14,7 +14,7 @@ testVar();
 // 1=>let
 // scope:block scoped
 // Hoisting: Yes but not initialized (temporal dead zone)
-// Reassignment: Allowed
+// Re-initialize: Allowed
 
 function testLet() {
   if (true) {
@@ -24,5 +24,3 @@ function testLet() {
   // console.log(y); ❌ ReferenceError (outside block)
 }
 testLet();
-
-
