@@ -59,4 +59,63 @@ const arr1 = [
     { name: "Krishan", rollNo: 24 },
 ];
 const filterdArray = arr1.filter((stud) => stud.rollNo === 22);
-console.log(filterdArray);
+console.log(filterdArray);// [{ name: "kanha", rollNo: 22 }]
+
+// Q5=>
+
+//console.log([] === []);//false
+console.log([] == []);
+
+// why?
+// In JavaScript, arrays are reference types. When you compare two arrays using the strict equality operator (===) or the loose equality 
+// operator (==), it checks whether they reference the same object in memory, not whether their contents are the same. 
+// Since [] creates a new array each time, [] === [] and [] == [] will both return false because they are different objects in memory.
+
+
+// Q6=> What is DOM vs BOM?
+
+/* DOM (Document Object Model) is a programming interface for HTML and XML documents. It represents the structure of a document as a tree 
+ of objects, allowing developers to manipulate the content and structure of web pages dynamically.*/
+
+/* BOM (Browser Object Model) is a programming interface for web browsers. It provides access to browser-specific features and 
+ functionalities, such as the window object, navigator object, and location object. BOM allows developers to interact with the 
+ browser environment and perform tasks like handling events, managing cookies, and controlling the browser's behavior.  
+ */
+
+
+//  Q7=> What is the output of the following code?
+
+let abc = 2;
+let a = !--abc;
+let b = !--abc;
+console.log(a, b);  //false true
+
+// why?
+// Initially, abc is 2. The expression !--abc first decrements abc to 1 and then negates it, resulting in false.
+// The second expression !--abc decrements abc to 0 and negates it, resulting in true. Therefore, the output is false true.
+
+
+// Q8=> What is the output of the following code?
+
+function sum(){
+    console.log("Hello");
+    return 2*2;
+}
+function square(){
+    console.log("hi");
+    return 4*4;
+}
+let c=(square(),sum());
+console.log(c); 
+
+// hello
+// hi
+// 16
+
+// why?
+/* The expression (sum(), square()) uses the comma operator, which evaluates both sum() and square() but returns the value of the last expression, which is square(). 
+ Therefore, it first logs "Hello" from sum(), then logs "hi" from square(), and finally returns 16 from square(), which is assigned to c. 
+ Hence, the output is "Hello", "hi", and 16. */
+
+
+ 
