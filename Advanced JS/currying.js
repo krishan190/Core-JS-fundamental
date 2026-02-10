@@ -17,6 +17,28 @@ function sum(a) {
 
 console.log(sum(1)(2)(3)) // 6
 
+// infinite currying
+function sum(a) {
+  return function(b){
+    if(!b){
+        return a;
+    }
+    return sum(a+b);
+  }
+}
+console.log(sum(1)(2)(3)(4)(5)(6)());
+
+// sum(1)
+//  → sum(3)
+//    → sum(6)
+//      → sum(10)
+//        → sum(15)
+//          → sum(21)
+//            → ()
+//              → return 21
+
+
+
 
 // *******************************************************************
 
