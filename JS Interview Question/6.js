@@ -1,5 +1,9 @@
 // first repeated character from the string.
 
+// Given a string, find the first repeated character in it. For example, 
+// if the input string is "Javascript", the output should be "a" since it is the first character that appears more than once.
+
+
 //BruteForce Appraoch
 
 function firstRepatedChar(str) {
