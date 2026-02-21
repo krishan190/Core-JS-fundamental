@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function myfun(element) {
+            var items = "";
+            var item_list = document.getElementsByClassName("item");
+
+            console.log("item_list", item_list[0].value);
+
+            item_list.array.forEach(element => {
+                if (element.checked)
+                    items += element.value + "\n";
+            });
+
+
+            alert(items == "" ? "You haven't Select any item" : "Items's You selected: \n" + items)
+        }
+    </script>
+</head>
+
+<body>
+    <h1>JavaScript Example</h1>
+    <input type="checkbox" class="item" value="Chocolate">Chocolate <br>
+    <input type="checkbox" class="item" value="Coffee">Coffee <br>
+    <input type="checkbox" class="item" value="Tea">Tea <br>
+    <input type="checkbox" class="item" value="Juice">Juice <br>
+    <input type="checkbox" class="item" value="Shake">Shake <br>
+    <input type="submit" onclick="myfun()" value="Order">
+</body>
+
+</html>

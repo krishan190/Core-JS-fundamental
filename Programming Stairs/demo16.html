@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function myfun(element) {
+            var items = "";
+            var item1 = document.getElementById("item1");
+            var item2 = document.getElementById("item2");
+            var item3 = document.getElementById("item3");
+            var item4 = document.getElementById("item4");
+            var item5 = document.getElementById("item5");
+
+            if (item1.checked)
+                items += item1.value + "\n";
+            if (item2.checked)
+                items += item2.value + "\n";
+            if (item3.checked)
+                items += item3.value + "\n";
+            if (item4.checked)
+                items += item4.value + "\n";
+            if (item5.checked)
+                items += item5.value + "\n";
+
+            alert(items == "" ? "You haven't Select any item" : "Items's You selected: \n" + items)
+        }
+    </script>
+</head>
+
+<body>
+    <h1>JavaScript Example</h1>
+    <input type="checkbox" id="item1" value="Chocolate">Chocolate <br>
+    <input type="checkbox" id="item2" value="Coffee">Coffee <br>
+    <input type="checkbox" id="item3" value="Tea">Tea <br>
+    <input type="checkbox" id="item4" value="Juice">Juice <br>
+    <input type="checkbox" id="item5" value="Shake">Shake <br>
+    <input type="submit" onclick="myfun()" value="Order">
+</body>
+
+</html>
