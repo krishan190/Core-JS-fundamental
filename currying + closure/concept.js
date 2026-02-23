@@ -2,6 +2,7 @@
 // concept of currying + closure
 
 // Closures = functions that remember the variables from their outer scope even after that scope has finished execution
+//  A closure is a function that remembers and accesses variables from its outer scope even after the outer function has finished executing
 
 const sum = (...args) => {
     let total = args.reduce((acc, n) => acc + n, 0);
