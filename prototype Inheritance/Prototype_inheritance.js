@@ -39,9 +39,6 @@ p2.__proto__.fname = "Hack";
 console.log("p1 after this", p1.fname);
 
 
-
-
-
 // by Akshay saini
 
 let arr = ["Akshay", "krishan"];
