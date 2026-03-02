@@ -2,9 +2,11 @@
 
 // ✅ Interview-Ready Answer
 
-// “A closure is created in JavaScript when an inner function remembers variables from its outer function, even after the outer function has finished executing. In simple terms, it allows functions to have ‘private memory’.
+// “A closure is created in JavaScript when an inner function remembers variables from its outer function, even after the outer function 
+// has finished executing. In simple terms, it allows functions to have ‘private memory’.
 
-// For example, if I create a counter function that increments a number, the inner function still remembers the counter variable because of closure.
+// For example, if I create a counter function that increments a number, the inner function still remembers the counter variable because 
+// of closure.
 
 // Closures are very useful in real projects:
 
@@ -12,11 +14,11 @@
 
 // They are used in event handlers, where each button can keep its own click count.
 
-// They power module patterns, which help organize code without polluting the global scope.
-
 // They’re also used in memoization, where expensive function results are cached for performance improvements.
 
-// In my project, I used closures to cache API responses. For example, when fetching product data, I wrapped the fetch function inside a closure with a cache object. This way, if the same API endpoint was called again, the data was returned from cache instead of making a new network request, which improved performance significantly.”
+// In my project, I used closures to cache API responses. For example, when fetching product data, 
+// I wrapped the fetch function inside a closure with a cache object. This way, if the same API endpoint was called again,
+//  the data was returned from cache instead of making a new network request, which improved performance significantly.”
 
 function outer() {
   let count = 0; // variable in outer function
