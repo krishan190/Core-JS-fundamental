@@ -18,12 +18,13 @@ function sum(a) {
 console.log(sum(1)(2)(3)) // 6
 
 // infinite currying
-function sum(a) {
-  return function(b){
-    if(!b){
-        return a;
+function sum(num1) {
+  return (num2) => {
+    if (num2 === undefined) {
+      return num1;
+    } else {
+      return sum(num1 + num2)
     }
-    return sum(a+b);
   }
 }
 console.log(sum(1)(2)(3)(4)(5)(6)());
